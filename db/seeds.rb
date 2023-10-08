@@ -1,4 +1,4 @@
 Admin.create!(
-  email: 'recipe@ease'
+  email: 'recipe@ease',
   password: 'recipe111'
 )
