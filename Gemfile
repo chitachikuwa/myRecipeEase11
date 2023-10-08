@@ -59,3 +59,7 @@ end
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'rails-i18n'
