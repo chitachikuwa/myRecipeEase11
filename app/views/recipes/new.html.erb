@@ -1,0 +1,33 @@
+<h1>レシピ作成<h1>
+  <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+
+  <%= f.file_field :image, id: "item-image" %>
+  <div class='field'>
+    <%= f.label :title %> 
+    <%= f.text_field :title%>
+  </div>
+
+    <%= f.collection_select :category, Category.all, :id, :name %>
+
+  <div class="field">
+    <%= f.label :ingredients %> 
+    <%= f.text_area :ingredients %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seasonings %>
+    <%= f.text_area :seasonings %>
+  </div>
+
+  <div class="field">
+    <%= f.label :steps %>
+    <%= f.text_area :steps %>
+  </div>   
+
+   <div class="actions">
+    <%= f.submit "作成する" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", recipes_path %> 

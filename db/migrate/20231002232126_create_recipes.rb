@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.json :ingredients,    null: false
       t.json :seasonings,     null: false
       t.text :steps,          null: false
+      t.integer :category,    null: false
       t.references :admin,    null: false, foreign_key:true
       t.timestamps
     end

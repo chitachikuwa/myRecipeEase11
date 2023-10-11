@@ -24,10 +24,11 @@
 | ingredients | json       | null: false                   |
 | seasonings  | json       | null: false                   |
 | steps       | text       | null: false                   |
-| user        | references | null: false, foreign_key:true |
+| category    | integer    | null: false                   |
+| admin       | references | null: false, foreign_key:true |
 
 ### Association
--belongs_to :user
+-belongs_to :admin
 -has_many :recipe_menu
 -has_many :menu, through: recipe_menu
 
