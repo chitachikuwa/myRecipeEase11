@@ -1,33 +1,63 @@
-<h1>レシピ作成<h1>
+<h1>レシピを作成する<h1>
   <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
+   
+   <%# 料理画像 %>
+   <div class="recipe-new-text">写真を登録
+     <%= f.file_field :image, id: "item-image" %>
+   </div>
 
-  <%= f.file_field :image, id: "item-image" %>
-  <div class='field'>
-    <%= f.label :title %> 
-    <%= f.text_field :title%>
-  </div>
+   <%# 料理名 %>
+   <div class='field'>
+     <div class="recipe-new-text">料理名
+      <%= f.text_field :title%>
+     </div>
+   </div>
 
-    <%= f.collection_select :category, Category.all, :id, :name %>
+   <%# 料理カテゴリー %>
+   <div class='field'>
+    <div class="recipe-new-text">分類
+     <%= f.collection_select :category, Category.all, :id, :name %>
+    </div>
+   </div>
 
-  <div class="field">
-    <%= f.label :ingredients %> 
-    <%= f.text_area :ingredients %>
-  </div>
+   <%# 食材 %>
+   <div class="field">
+    <div id="ingredients-fields">
+      <div class="recipe-new-text">食材
+        <ul id="ingredients-list">   
+        </ul>
+        <button id="ingredient-button" class="recipe-button">食材を追加</button>
+      </div>  
+    </div>
+   </div> 
 
-  <div class="field">
-    <%= f.label :seasonings %>
-    <%= f.text_area :seasonings %>
-  </div>
+   <%# 調味料 %>
+    <div class="field">
+     <div id="seasonings-fields">
+       <div class="recipe-new-text">調味料
+         <ul id="seasonings-list">
+         </ul>
+         <button id="seasoning-button" class="recipe-button">調味料を追加</button>
+       </div>
+     </div>  
+    </div>
+   
+   <%# 作り方 %>
+   <div class="field">
+    <div id="steps-fields">
+      <div class="recipe-new-text">作り方
+        <ol id="steps-list">
+        </ol>
+        <button id="step-button" class="recipe-button">作り方を追加</button>
+      </div>
+    </div>
+   </div>
 
-  <div class="field">
-    <%= f.label :steps %>
-    <%= f.text_area :steps %>
-  </div>   
-
-   <div class="actions">
+  <%# 作成ボタン %>
+  <div class="actions">
     <%= f.submit "作成する" %>
   </div>
+  
 <% end %>
-
 <%= link_to "戻る", recipes_path %> 
