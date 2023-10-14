@@ -18,6 +18,6 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).pemit(:iamge, :title, :category, :ingredients, :seasonings, :step) 
+    params.require(:recipe).permit(:image, :title, :category_id, ingredients: [], seasonings: [], steps: []) 
   end
 end

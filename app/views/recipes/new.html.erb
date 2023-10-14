@@ -17,7 +17,7 @@
    <%# 料理カテゴリー %>
    <div class='field'>
     <div class="recipe-new-text">分類
-     <%= f.collection_select :category, Category.all, :id, :name %>
+     <%= f.collection_select :category_id, Category.all, :id, :name %>
     </div>
    </div>
 
@@ -56,8 +56,8 @@
 
   <%# 作成ボタン %>
   <div class="actions">
-    <%= f.submit "作成する" %>
+    <%= f.submit "作成する" ,id:"submit-button" %>
   </div>
-  
+
 <% end %>
 <%= link_to "戻る", recipes_path %> 
