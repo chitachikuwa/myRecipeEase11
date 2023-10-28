@@ -31,4 +31,4 @@ window.addEventListener('load' , function(){
         newStep.innerHTML = '<input type="text" name="steps[]" class="steps-input">';
         stepsList.appendChild(newStep);
     });
-});
+})
