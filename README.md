@@ -1,72 +1,78 @@
-# テーブル設計
-
-## user テーブル
-
-| Column            | Type   | Options     |
-| ------------------ | -------| ----------- |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| kana_last_name     | string | null: false |
-| kane_first_name    | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-
-### Association
-- has_many :recipes
-- has_one :destination
+### アプリケーション名
+-------------------------------------------------------------------------------------------------
+RecipeEase
 
 
-## recipe テーブル
-    
-| Column      | Type       | Options                       |
-| ----------- | ---------- | ----------------------------- |
-| title       | string     | null: false                   |
-| ingredients | json       | null: false                   |
-| seasonings  | json       | null: false                   |
-| steps       | text       | null: false                   |
-| category    | integer    | null: false                   |
-| admin       | references | null: false, foreign_key:true |
-
-### Association
--belongs_to :admin
--has_many :recipe_menu
--has_many :menu, through: recipe_menu
+### アプリケーション概要
+--------------------------------------------------------------------------------------------------
+レシピ検索、献立管理ができ材料をネットスーパーで購入ができる。
 
 
-## menu テーブル
-| Column  | Type       | Options                       |
-| ------- | ---------- | ----------------------------- |
-| date    | date       | null: false                   |
-| recipe  | references | null: false, foreign_key:true |
-
-### Association
--has_many :recipe_menu
--has_many :menu, through: recipe_menu
+### URL
+--------------------------------------------------------------------------------------------------
+https://recipeease.onrender.com
 
 
-## recipe_menu テーブル
+### テスト用アカウント
+--------------------------------------------------------------------------------------------------
+・管理者用アドレス：recipe@ease
+・管理者用パスワード: recipe111
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| recipe | references | null: false, foreign_kye: true |
-| menu   | references | null: false, foreign_kye: true |
 
-### Association
+### 利用方法
+---------------------------------------------------------------------------------------------------
 
--belongs_to :room
--belongs_to :user
+## 管理者レシピ投稿
+---------------------------------------------------------------------------------------------------
+1.管理者用ログインページよりログインする
+2.レシピ作成ボタンを押し、料理画像、料理名、カテゴリー、食材、調味料、作り方を入力し、作成ボタンを押す
 
-## destination
+# ユーザ用献立管理・材料購入
+---------------------------------------------------------------------------------------------------
+1.カレンダーで日付選択（最大１週間分）し献立作成ボタンを押す
+2.作成された献立から購入したい食材を選択
+3.郵便番号、住所、電話番号を入力し購入ボタンを押す
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------ ------------------------|
-| postal_code    | string     | null: false                    | 
-| prefecture_id  | integer    | null: false                    |
-| city           | string     | null: false                    |
-| address        | string     | null: false                    |
-| apartment_name | string     |                                |
-| phone_number   | string     | null: false                    |
-| user           | references | null: false, foreign_kye: true |
 
-### Association
--belongs_to :user
+### アプリケーションを作成した背景
+---------------------------------------------------------------------------------------------------
+現在、私には小さい子どもがいます。一緒に買い物に行く際いつもゆっくり買い物することが難しい時が多いこと。<br>
+買い物に行く際も、自転車での買い物になり天気に左右されたり、購入する量が限られるため買い物を頻繁に行く事が<br>
+不便に感じたこと。毎日献立を考えるのが大変に感じ少しでも家事の負担を減らしたいと思ったのがきっかけ。
+
+
+### 洗い出した要件
+----------------------------------------------------------------------------------------------------
+https://docs.google.com/spreadsheets/d/1HfvWpiswBDvUAteMjpsTIp8Y1Ik5crIsWTOh2_MBFJ0/edit#gid=982722306
+
+
+### 実装した機能
+----------------------------------------------------------------------------------------------------
+・管理者用ログイン（設定したアドレス・パスワードのみログインが可能）
+・ユーザ用新規登録、ログイン、エラーメッセージの日本語化
+・レシピ作成機能
+
+
+### 実装予定の機能
+----------------------------------------------------------------------------------------------------
+・カレンダーで日付選択し自動で献立作成
+・食材購入機能
+・レシピ検索機能
+
+
+### データ設計
+
+
+
+### 画面遷移図
+
+
+
+### 開発環境
+
+
+
+### ローカルでの動作方法
+
+
+
