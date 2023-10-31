@@ -55,13 +55,20 @@ https://docs.google.com/spreadsheets/d/1HfvWpiswBDvUAteMjpsTIp8Y1Ik5crIsWTOh2_MB
 
 
 ## データベース設計
-![Image from Gyazo](https://i.gyazo.com/5604b58c3176cec854a0a0c54f931c57.png)](https://gyazo.com/5604b58c3176cec854a0a0c54f931c57)
+[![Image from Gyazo](https://i.gyazo.com/5604b58c3176cec854a0a0c54f931c57.png)](https://gyazo.com/5604b58c3176cec854a0a0c54f931c57)
 
 
 
 ## 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/99a689901845d05a960525613d02e0ff.png)](https://gyazo.com/99a689901845d05a960525613d02e0ff)
+
 
 ## 開発環境
+・Ruby on Rails<br>
+・MySQ<br>
+・GitHub<br>
+・render<br>
+
 
 
 ## ローカルでの動作方法
@@ -69,6 +76,6 @@ https://docs.google.com/spreadsheets/d/1HfvWpiswBDvUAteMjpsTIp8Y1Ik5crIsWTOh2_MB
 
 ## 工夫した点
 ・ユーザが新規登録・ログインする際、不備があった際、わかりやすいよう日本語化
-・
+
 
 
