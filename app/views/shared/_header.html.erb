@@ -1,0 +1,14 @@
+<div class='header-main'>
+  <div class='header-title'>
+     Recipe Ease
+  <div>
+  
+    <ul class='lists-left'>
+    <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+     <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>/
+   <%= link_to "ログイン", new_user_session_path, class: "sign-up" %>
+    <% end %>
+</div>
+<%= link_to "管理者ログイン", new_admin_session_path %>
+<%= link_to "レシピ投稿" , new_recipe_path, method: :get%>

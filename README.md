@@ -52,6 +52,7 @@ https://docs.google.com/spreadsheets/d/1HfvWpiswBDvUAteMjpsTIp8Y1Ik5crIsWTOh2_MB
 ・カレンダーで日付選択し自動で献立作成<br>
 ・食材購入機能<br>
 ・レシピ検索機能<br>
+・マイページ作成
 
 
 ## データベース設計
